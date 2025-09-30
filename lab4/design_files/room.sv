@@ -5,7 +5,7 @@ logic s0_next, s1_next, s2_next, s3_next, s4_next, s5_next, s6_next;
 assign s0_next = reset || (s0 && !(e)) || (s1 && win);
 assign s1_next = (s0 && e && ~reset) || (s2 && n && ~reset) || (s1 && ~(w || s));
 assign s2_next = (s1 && s && ~reset) || (s3 && e && ~reset) || (s2 && ~(n || w || e));
-assign s3_next = (s2 && w && ~reset) || (s3 && ~(e));
+assign s3_next = (s2 && w && ~reset) || (s3 && ~e);
 assign s4_next = (s2 && s && e && ~reset);
 assign s5_next = (s4 && ~v && ~reset);
 assign s6_next = (s4 && v && ~reset);
